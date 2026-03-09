@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieFinder | Discover Films</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <h1 class="logo">Movie<span>Finder</span></h1>
+        <nav>
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#search-section">Search</a></li>
+            <li><a href="#favorites">Watch Later</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-content container">
+          <h2 class="fade-in">Discover Your Next Favorite Movie</h2>
+          <p class="fade-in delay-1">Access detailed information about thousands of films instantly.</p>
+          <a href="#search-section" class="btn-primary fade-in delay-2">Get Started</a>
+        </div>
+        <div class="hero-overlay"></div>
+      </section>
+
+      <section id="search-section" class="search-section container">
+        <div class="search-box">
+          <h3>Find a Movie</h3>
+          <form id="search-form" class="search-form">
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Enter movie title..." 
+              required
+              aria-label="Search movies"
+            />
+            <button type="submit" id="search-btn">Search</button>
+          </form>
+          <div id="search-status" class="status-message"></div>
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All Results</button>
+          <button class="filter-btn" data-filter="movie">Movies</button>
+          <button class="filter-btn" data-filter="series">Series</button>
+          <div class="sort-options">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select">
+              <option value="relevance">Relevance</option>
+              <option value="year-newest">Year (Newest)</option>
+              <option value="year-oldest">Year (Oldest)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="movie-results" class="results-grid">
+          <!-- Movie cards will be injected here by JavaScript -->
+          <div class="placeholder-text">Search for a movie to see results...</div>
+        </div>
+      </section>
+
+      <section id="favorites" class="favorites container">
+        <h2>Watch Later Queue</h2>
+        <div id="watch-later-list" class="results-grid">
+          <div class="placeholder-text">Your list is empty. Add some movies!</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-info">
+          <p>&copy; 2026 MovieFinder Project. Built with HTML, CSS & JavaScript.</p>
+          <p>Academic Project - Status 1 & 2 Completed.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Details Modal -->
+    <div id="movie-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-body">
+          <!-- Dynamic content will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
